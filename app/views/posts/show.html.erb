@@ -1,0 +1,15 @@
+<div class='post'>
+    <h2><%= @post.title %></h2>
+    <p><%= @post.content %></p>
+    <small class='byline'>
+        By <%= @post.author %> on <%= @post.created_at %>
+    </small>
+</div>
+
+<h2><%= @post.comments.count %> Comments</h2>
+<%= render @post.comments %>
+
+
+<p><%= link_to "< Back to list", root_path %></p>
+
+<p><%= link_to 'Edit', edit_post_path(@post) %></p>	

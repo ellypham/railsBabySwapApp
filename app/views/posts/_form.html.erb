@@ -1,0 +1,25 @@
+<%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+        Your form has errors:
+        <ul>
+            <% @post.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+    </div>
+    <div>
+        <%= f.label :category %>
+        <%= f.text_field :category %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

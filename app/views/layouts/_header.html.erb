@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      Baby Stuff Swap
+    </a>
+    <div style='float: right'>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", "/users/sign_out", class: 'btn btn-primary', method: 'delete' %>
+      <% else %>
+        <%= link_to "Sign in", "/users/sign_in", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+    
+    <%= form_tag root_path, method: "GET", style: 'float: right' do %>
+      <%= text_field_tag :q, params[:q], placeholder: "Search for Posts" %>
+      <%= submit_tag "Search", class: 'btn' %>
+    <% end %>
+  </div>
+</nav>
